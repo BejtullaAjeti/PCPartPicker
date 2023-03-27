@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Casee;
 use Illuminate\Http\Request;
 
-class CaseeController extends Controller
+class CaseController extends Controller
 {
     public function index()
     {

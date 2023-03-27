@@ -9,7 +9,7 @@ class Casee extends Model
 {
     use HasFactory;
 
-    protected $table = 'casees';
+    protected $table = 'cases';
     protected $primaryKey = 'id';
     protected $fillable = ['name', 'type', 'color', 'material', 'dimensions' , 'price'];
 
