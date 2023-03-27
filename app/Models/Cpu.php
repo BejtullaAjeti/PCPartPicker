@@ -11,7 +11,7 @@ class Cpu extends Model
 
     protected $table = 'cpus';
     protected $primaryKey = 'id';
-    protected $fillable = ['name', 'cores', 'threads', 'clock_speed' , 'socket', 'price'];
+    protected $fillable = ['brand','name','socket','cores', 'threads', 'base_clock','turbo' ,'ram_type','ram_speed','tdp','price'];
 
-  
+
 }

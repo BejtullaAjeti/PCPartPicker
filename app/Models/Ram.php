@@ -11,5 +11,5 @@ class Ram extends Model
 
     protected $table = 'rams';
     protected $primaryKey = 'id';
-    protected $fillable = ['name', 'capacity', 'speed', 'type', 'modules', 'price'];
+    protected $fillable = ['brand', 'name', 'type', 'capacity', 'speed', 'modules', 'price'];
 }

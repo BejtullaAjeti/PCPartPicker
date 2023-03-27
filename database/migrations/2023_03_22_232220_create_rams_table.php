@@ -13,10 +13,11 @@ return new class extends Migration
     {
         Schema::create('rams', function (Blueprint $table) {
             $table->id();
+            $table->string('brand');
             $table->string('name');
+            $table->string('type');
             $table->integer('capacity');
             $table->integer('speed');
-            $table->string('type');
             $table->string('modules');
             $table->decimal('price');
             $table->timestamps();

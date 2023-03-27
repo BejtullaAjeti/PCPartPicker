@@ -13,16 +13,18 @@
                         </a>
                         <br/>
                         <br/>
-                        <div class="table-responsive"> 
+                        <div class="table-responsive">
                             <table class="table">
                                 <thead>
                                     <tr>
                                         <th>#</th>
+                                        <th>Brand</th>
                                         <th>Name</th>
                                         <th>Chipset</th>
                                         <th>Form Factor</th>
                                         <th>Memory Slots</th>
-                                        <th>Maxmemory</th>
+                                        <th>Memory Type</th>
+                                        <th>Max Memory</th>
                                         <th>Pcie Slots</th>
                                         <th>m2 slots</th>
                                         <th>Price</th>
@@ -33,11 +35,13 @@
                                     @foreach ($motherboards as $item)
                                         <tr>
                                             <td>{{ $loop->iteration}}</td>
+                                            <td>{{ $item->brand}}</td>
                                             <td>{{ $item->name}}</td>
                                             <td>{{ $item->chipset}}</td>
                                             <td>{{ $item->socket}}</td>
                                             <td>{{ $item->form_factor}}</td>
                                             <td>{{ $item->memory_slots}}</td>
+                                            <td>{{ $item->memory_type}}</td>
                                             <td>{{ $item->max_memory}}</td>
                                             <td>{{ $item->pcie_slots}}</td>
                                             <td>{{ $item->m2_slots}}</td>
@@ -51,7 +55,7 @@
                                                     {{ csrf_field() }}
                                                    <button type="submit" class="btn btn-danger btn-sm" title="Delete MOTHERBOARD" onclick="return confirm('Confirm delete?')"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Delete</button>
                                                 </form>
-                                               
+
                                             </td>
 
                                         </tr>
@@ -66,5 +70,5 @@
         </div>
 
     </div>
-    
+
 @endsection
