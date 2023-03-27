@@ -13,11 +13,13 @@ return new class extends Migration
     {
         Schema::create('motherboards', function (Blueprint $table) {
             $table->id();
+            $table->string('brand');
             $table->string('name');
             $table->string('chipset');
             $table->string('socket');
             $table->string('form_factor');
             $table->integer('memory_slots');
+            $table->string('memory_type');
             $table->integer('max_memory');
             $table->integer('pcie_slots');
             $table->integer('m2_slots');

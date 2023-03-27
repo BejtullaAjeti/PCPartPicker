@@ -13,11 +13,16 @@ return new class extends Migration
     {
         Schema::create('cpus', function (Blueprint $table) {
             $table->id();
+            $table->string('brand');
             $table->string('name');
+            $table->string('socket');
             $table->integer('cores');
             $table->integer('threads');
-            $table->decimal('clock_speed');
-            $table->string('socket');
+            $table->decimal('base_clock');
+            $table->decimal('turbo');
+            $table->string('ram_type');
+            $table->string('ram_speed');
+            $table->string('tdp');
             $table->decimal('price');
             $table->timestamps();
         });

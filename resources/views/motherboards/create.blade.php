@@ -7,6 +7,8 @@
     <div class="card-body">
         <form action="{{ url('motherboard') }}" method="post">
             {!! csrf_field() !!}
+            <label>Brand</label><br />
+            <input type="text" name="brand" id="brand" class="form-control"><br />
             <label>Name</label><br />
             <input type="text" name="name" id="name" class="form-control"><br />
             <label>Chipset</label><br/>
@@ -17,7 +19,9 @@
             <input type="text" name="form_factor" id="form_factor" class="form-control"><br />
             <label>Memory Slots</label>
             <input type="text" name="memory_slots" id="memory_slots" class="form-control"><br />
-            <label>Maxmemory</label>
+            <label>Memory Type</label>
+            <input type="text" name="memory_type" id="memory_type" class="form-control"><br />
+            <label>Max Memory</label>
             <input type="text" name="max_memory" id="max_memory" class="form-control"><br />
             <label>Pcie Slots</label>
             <input type="text" name="pcie_slots" id="pcie_slots" class="form-control"><br />
@@ -25,7 +29,7 @@
             <input type="text" name="m2_slots" id="m2_slots" class="form-control"><br />
             <label>Price</label>
             <input type="text" name="price" id="price" class="form-control"><br />
-            
+
             <input type="submit" value="Save" class="btn btn-success"><br />
         </form>
 

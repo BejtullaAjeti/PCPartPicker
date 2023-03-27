@@ -1,5 +1,13 @@
 <?php
 
+use App\Http\Controllers\CpuController;
+use App\Http\Controllers\CpuCoolerController;
+use App\Http\Controllers\GpuController;
+use App\Http\Controllers\MotherboardController;
+use App\Http\Controllers\PowerSupplyController;
+use App\Http\Controllers\RamController;
+use App\Http\Controllers\StorageController;
+use App\Http\Controllers\TowerController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,18 +27,18 @@ Route::get('/', function(){
 
 
 
-Route::resource("/cpu",CpuController::class);
+Route::resource("/cpu", CpuController::class);
 
-Route::resource("/gpu",GpuController::class);
+Route::resource("/gpu", GpuController::class);
 
-Route::resource("/ram",RamController::class);
+Route::resource("/ram", RamController::class);
 
-Route::resource('/casee',CaseeController::class);
+Route::resource('/tower', TowerController::class);
 
-Route::resource('/cpu_cooler',CpuCoolerController::class);
+Route::resource('/cpu_cooler', CpuCoolerController::class);
 
-Route::resource('/storage',StorageController::class);
+Route::resource('/storage', StorageController::class);
 
-Route::resource('/power_supplie',PowerSupplyController::class);
+Route::resource('/power_supply', PowerSupplyController::class);
 
-Route::resource('/motherboard',MotherboardController::class);
+Route::resource('/motherboard', MotherboardController::class);
