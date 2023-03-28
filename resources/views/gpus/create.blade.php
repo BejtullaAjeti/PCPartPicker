@@ -29,6 +29,8 @@
             <input type="text" name="memory_clock" id="memory_clock" class="form-control"><br />
             <label>Interface</label>
             <input type="text" name="interface" id="interface" class="form-control"><br />
+            <label>TDP</label>
+            <input type="text" name="tdp" id="tdp" class="form-control"><br />
             <label>Price</label>
             <input type="text" name="price" id="price" class="form-control"><br />
 

@@ -34,6 +34,9 @@
                 <label>Interface</label>
                 <input type="text" name="interface" id="interface" value="{{$gpus->interface}}"
                        class="form-control"><br/>
+                <label>TDP</label>
+                <input type="text" name="tdp" id="tdp" value="{{$gpus->tdp}}"
+                       class="form-control"><br/>
                 <label>Price</label>
                 <input type="text" name="price" id="price" value="{{$gpus->price}}" class="form-control"><br/>
 

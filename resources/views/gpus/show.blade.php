@@ -19,6 +19,7 @@
         <h5 class="card-title">Memory Type : {{ $gpus->memory_type}}</h5>
         <h5 class="card-title">Memory Clock : {{ $gpus->memory_clock}}</h5>
         <h5 class="card-title">Interface : {{ $gpus->interface}}</h5>
+        <h5 class="card-title">TDP : {{$gpus->tdp}}</h5>
         <h5 class="card-title">Price : {{ $gpus->price}}</h5>
     </div>
     <hr />

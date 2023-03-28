@@ -29,6 +29,7 @@
                                         <th>Memory Type</th>
                                         <th>Memory Clock</th>
                                         <th>Interface</th>
+                                        <th>TDP</th>
                                         <th>Price</th>
 
                                     </tr>
@@ -45,6 +46,7 @@
                                             <td>{{ $item->memory_type}}</td>
                                             <td>{{ $item->memory_clock}}</td>
                                             <td>{{ $item->interface}}</td>
+                                            <td>{{$item->tdp}}</td>
                                             <td>{{ $item->price}}</td>
 
                                             <td>
