@@ -4,6 +4,13 @@
 <div class="card" style="margin: 20px;">
     <div class="card-header">Edit CPU</div>
     <div class="card-body">
+        <a href="{{ url('/cpu/') }}" class="btn btn-success btn-sm" title="Add New CPU">
+            Return to CPU's
+        </a>
+        <a href="{{ url('') }}" class="btn btn-success btn-sm" title="Turn Back to Main" >
+            Return to Main
+        </a>
+        <br/>
 
 
     <form action="{{url('cpu/' . $cpus->id) }}" method="post">

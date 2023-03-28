@@ -4,6 +4,12 @@
 <div class="card" style="margin: 20px;">
     <div class="card-header">Edit RAM</div>
     <div class="card-body">
+        <a href="{{ url('/ram/') }}" class="btn btn-success btn-sm" title="Add New CPU">
+            Return to RAM's
+        </a>
+        <a href="{{ url('') }}" class="btn btn-success btn-sm" title="Turn Back to Main" >
+            Return to Main
+        </a>
 
 
     <form action="{{url('ram/' . $rams->id) }}" method="post">

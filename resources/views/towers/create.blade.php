@@ -6,6 +6,12 @@
 
         <div class="card-body">
             <form action="{{ url('tower') }}" method="post">
+                <a href="{{ url('/tower/') }}" class="btn btn-success btn-sm" title="Add New CASE">
+                    Return to Towers
+                </a>
+                <a href="{{ url('') }}" class="btn btn-success btn-sm" title="Turn Back to Main" >
+                    Return to Main
+                </a>
                 {!! csrf_field() !!}
                 <label>Brand</label><br/>
                 <input type="text" name="brand" id="brand" class="form-control"><br/>

@@ -7,6 +7,12 @@
 
 
             <form action="{{url('tower/' . $towers->id) }}" method="post">
+                <a href="{{ url('/tower/') }}" class="btn btn-success btn-sm" title="Add New CASE">
+                    Return to Towers
+                </a>
+                <a href="{{ url('') }}" class="btn btn-success btn-sm" title="Turn Back to Main" >
+                    Return to Main
+                </a>
                 {!! csrf_field() !!}
                 @method("PATCH")
                 <input type="hidden" name="id" id="id" value="{{$towers->id}}" id="id"/>

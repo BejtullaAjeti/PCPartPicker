@@ -5,6 +5,12 @@
         <div class="card-header">CASE Page</div>
         <div class="card-body">
             <div class="card-body">
+                <a href="{{ url('/tower/') }}" class="btn btn-success btn-sm" title="Add New CASE">
+                    Return to Towers
+                </a>
+                <a href="{{ url('') }}" class="btn btn-success btn-sm" title="Turn Back to Main" >
+                    Return to Main
+                </a>
                 <h5 class="card-title">Brand : {{ $casees->brand}}</h5>
                 <h5 class="card-title">Name : {{ $casees->name}}</h5>
                 <h5 class="card-title">Type : {{ $casees->type}}</h5>

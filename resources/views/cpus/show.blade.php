@@ -5,6 +5,13 @@
 <div class="card-header">Details</div>
 <div class="card-body">
     <div class="card-body">
+        <a href="{{ url('/cpu/') }}" class="btn btn-success btn-sm" title="Add New CPU">
+            Return to CPU's
+        </a>
+        <a href="{{ url('') }}" class="btn btn-success btn-sm" title="Turn Back to Main" >
+            Return to Main
+        </a>
+        <br/>
         <h5 class="card-title">Brand : {{ $cpus->brand}}</h5>
         <p class="card-text">Name : {{ $cpus->name}}</p>
         <p class="card-text">Socket : {{ $cpus->socket}}</p>
