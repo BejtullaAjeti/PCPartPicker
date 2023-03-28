@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('memory_type');
             $table->decimal('memory_clock');
             $table->string('interface');
+            $table->string('tdp');
             $table->decimal('price');
 
             $table->timestamps();
