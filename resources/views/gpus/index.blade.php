@@ -11,13 +11,17 @@
                         <a href="{{ url('/gpu/create') }}" class="btn btn-success btn-sm" title="Add New GPU">
                             Add New
                         </a>
+                        <a href="{{ url('') }}" class="btn btn-success btn-sm" title="Turn Back to Main" >
+                            Return to Main
+                        </a>
                         <br/>
                         <br/>
-                        <div class="table-responsive"> 
+                        <div class="table-responsive">
                             <table class="table">
                                 <thead>
                                     <tr>
                                         <th>#</th>
+                                        <th>Brand</th>
                                         <th>Name</th>
                                         <th>Core Clock</th>
                                         <th>Boost Clock</th>
@@ -33,6 +37,7 @@
                                     @foreach ($gpus as $item)
                                         <tr>
                                             <td>{{ $loop->iteration}}</td>
+                                            <td>{{ $item->brand}}</td>
                                             <td>{{ $item->name}}</td>
                                             <td>{{ $item->core_clock}}</td>
                                             <td>{{ $item->boost_clock}}</td>
@@ -50,7 +55,7 @@
                                                     {{ csrf_field() }}
                                                    <button type="submit" class="btn btn-danger btn-sm" title="Delete GPU" onclick="return confirm('Confirm delete?')"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Delete</button>
                                                 </form>
-                                               
+
                                             </td>
 
                                         </tr>
@@ -65,5 +70,5 @@
         </div>
 
     </div>
-    
+
 @endsection

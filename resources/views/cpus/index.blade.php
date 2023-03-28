@@ -11,7 +11,9 @@
                         <a href="{{ url('/cpu/create') }}" class="btn btn-success btn-sm" title="Add New CPU">
                             Add New
                         </a>
-                        <br/>
+                        <a href="{{ url('') }}" class="btn btn-success btn-sm" title="Turn Back to Main" >
+                            Return to Main
+                        </a>
                         <br/>
                         <div class="table-responsive">
                             <table class="table">

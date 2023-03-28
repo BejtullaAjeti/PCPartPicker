@@ -11,6 +11,9 @@
                         <a href="{{ url('/tower/create') }}" class="btn btn-success btn-sm" title="Add New CASE">
                             Add New
                         </a>
+                        <a href="{{ url('') }}" class="btn btn-success btn-sm" title="Turn Back to Main" >
+                            Return to Main
+                        </a>
                         <br/>
                         <br/>
                         <div class="table-responsive">

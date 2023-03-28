@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('gpus', function (Blueprint $table) {
             $table->id();
+            $table->string('brand');
             $table->string('name');
             $table->decimal('core_clock');
             $table->decimal('boost_clock');

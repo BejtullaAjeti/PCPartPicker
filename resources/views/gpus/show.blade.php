@@ -5,6 +5,13 @@
 <div class="card-header">GPU Page</div>
 <div class="card-body">
     <div class="card-body">
+        <a href="{{ url('/gpu/') }}" class="btn btn-success btn-sm" title="Add New GPU">
+            Return to GPU's
+        </a>
+        <a href="{{ url('') }}" class="btn btn-success btn-sm" title="Turn Back to Main" >
+            Return to Main
+        </a>
+        <h5 class="card-title">Name : {{ $gpus->brand}}</h5>
         <h5 class="card-title">Name : {{ $gpus->name}}</h5>
         <h5 class="card-title">Core Clock : {{ $gpus->core_clock}}</h5>
         <h5 class="card-title">Boost Clock : {{ $gpus->boost_clock}}</h5>
