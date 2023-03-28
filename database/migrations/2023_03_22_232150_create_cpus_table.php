@@ -9,6 +9,7 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
+    /** test branch */
     public function up(): void
     {
         Schema::create('cpus', function (Blueprint $table) {
