@@ -10,6 +10,8 @@
         {!! csrf_field() !!}
         @method("PATCH")
         <input type="hidden" name="id" id="id" value="{{$storages->id}}" id="id" />
+        <label>Brand</label><br />
+        <input type="text" name="brand" id="brand" value="{{$storages->brand}}" class="form-control"><br />
         <label>Name</label><br />
         <input type="text" name="name" id="name" value="{{$storages->name}}" class="form-control"><br />
         <label>Type</label>
@@ -26,7 +28,7 @@
         <input type="text" name="write_speed" id="write_speed" value="{{$storages->write_speed}}" class="form-control"><br />
         <label>Price</label>
         <input type="text" name="price" id="price" value="{{$storages->price}}" class="form-control"><br />
-        
+
         <input type="submit" value="Update" class="btn btn-success"> <br />
     </form>
 </div>

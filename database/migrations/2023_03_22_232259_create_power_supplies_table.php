@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('power_supplies', function (Blueprint $table) {
             $table->id();
+            $table->string('brand');
             $table->string('name');
             $table->integer ('wattage');
             $table->string ('efficiency_rating');

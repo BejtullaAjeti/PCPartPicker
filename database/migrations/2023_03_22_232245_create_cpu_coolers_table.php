@@ -13,11 +13,12 @@ return new class extends Migration
     {
         Schema::create('cpu_coolers', function (Blueprint $table) {
             $table->id();
+            $table->string('brand');
             $table->string('name');
             $table->string('type');
             $table->decimal('noise_level');
             $table->decimal('fan_size');
-            $table->decimal('height');
+            $table->decimal('dimensions');
             $table->decimal('price');
             $table->timestamps();
         });

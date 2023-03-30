@@ -11,5 +11,5 @@ class CpuCooler extends Model
 
     protected $table='cpu_coolers';
     protected $primarykey ='id';
-    protected $fillable = ['name', 'type', 'noise_level', 'fan_size','height', 'price'];
+    protected $fillable = ['name', 'type', 'noise_level', 'fan_size','height', 'dimensions', 'price'];
 }
