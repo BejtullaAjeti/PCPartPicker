@@ -10,5 +10,5 @@ class Storage extends Model
     use HasFactory;
     protected $table = 'storages';
     protected $primaryKey = 'id';
-    protected $fillable = ['name', 'type', 'capacity', 'interface', 'form_factor','read_speed', 'write_speed','price'];
+    protected $fillable = ['brand', 'name', 'type', 'capacity', 'interface', 'form_factor','read_speed', 'write_speed', 'price'];
 }

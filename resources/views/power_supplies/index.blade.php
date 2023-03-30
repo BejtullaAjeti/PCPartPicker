@@ -13,14 +13,15 @@
                         </a>
                         <br/>
                         <br/>
-                        <div class="table-responsive"> 
+                        <div class="table-responsive">
                             <table class="table">
                                 <thead>
                                     <tr>
                                         <th>#</th>
+                                        <th>Brand</th>
                                         <th>Name</th>
                                         <th>Wattage</th>
-                                        <th>Efficienty Rating</th>
+                                        <th>Efficiency Rating</th>
                                         <th>Modularity</th>
                                         <th>Fan size</th>
                                         <th>Price</th>
@@ -31,6 +32,7 @@
                                     @foreach ($power_supplies as $item)
                                         <tr>
                                             <td>{{ $loop->iteration}}</td>
+                                            <td>{{ $item->brand}}</td>
                                             <td>{{ $item->name}}</td>
                                             <td>{{ $item->wattage}}</td>
                                             <td>{{ $item->efficiency_rating}}</td>
@@ -46,7 +48,7 @@
                                                     {{ csrf_field() }}
                                                    <button type="submit" class="btn btn-danger btn-sm" title="Delete POWER SUPPLY" onclick="return confirm('Confirm delete?')"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Delete</button>
                                                 </form>
-                                               
+
                                             </td>
 
                                         </tr>
@@ -61,5 +63,5 @@
         </div>
 
     </div>
-    
+
 @endsection

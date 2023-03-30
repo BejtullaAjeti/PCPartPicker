@@ -7,6 +7,8 @@
     <div class="card-body">
         <form action="{{ url('cpu_cooler') }}" method="post">
             {!! csrf_field() !!}
+            <label>Brand</label><br />
+            <input type="text" name="brand" id="brand" class="form-control"><br />
             <label>Name</label><br />
             <input type="text" name="name" id="name" class="form-control"><br />
             <label>Type</label><br/>
@@ -19,7 +21,7 @@
             <input type="text" name="height" id="height" class="form-control"><br />
             <label>Price</label>
             <input type="text" name="price" id="price" class="form-control"><br />
-            
+
             <input type="submit" value="Save" class="btn btn-success"><br />
         </form>
 
