@@ -5,7 +5,7 @@
     <div class="card-header">Add New POWER SUPPLY</div>
 
     <div class="card-body">
-        <form action="{{ url('power_supplie') }}" method="post">
+        <form action="{{ url('power_supply') }}" method="post">
             {!! csrf_field() !!}
             <label>Brand</label><br />
             <input type="text" name="brand" id="brand" class="form-control"><br />

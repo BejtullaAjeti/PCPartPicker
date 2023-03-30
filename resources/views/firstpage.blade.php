@@ -25,8 +25,6 @@
                 <th scope="col">CPU</th>
                 <th><a class="btn btn-primary" href="/cpu/" role="button">Manage CPU</a></th>
             </tr>
-
-
             <tr>
                 <th scope="col">GPU</th>
                 <th><a class="btn btn-primary" href="/gpu/" role="button">Manage GPU</a></th>
@@ -45,7 +43,7 @@
             </tr>
             <tr>
                 <th scope="col">Power Supply</th>
-                <th><a class="btn btn-primary" href="/power_supplie/" role="button">Manage Power Supplie</a></th>
+                <th><a class="btn btn-primary" href="/power_supply/" role="button">Manage Power Supply</a></th>
             </tr>
             <tr>
                 <th scope="col">Motherboard</th>

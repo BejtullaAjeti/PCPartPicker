@@ -6,7 +6,7 @@
     <div class="card-body">
 
 
-    <form action="{{url('power_supplie/' . $power_supplies->id) }}" method="post">
+    <form action="{{url('power_supply/' . $power_supplies->id) }}" method="post">
         {!! csrf_field() !!}
         @method("PATCH")
         <input type="hidden" name="id" id="id" value="{{$power_supplies->id}}" id="id" />

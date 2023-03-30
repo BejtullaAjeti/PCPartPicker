@@ -22,7 +22,7 @@ class PowerSupplyController extends Controller
     {
         $input = $request->all();
         PowerSupply::create($input);
-        return redirect('power_supplie')->with('flash_message','PowerSupply Addedd!');
+        return redirect('power_supply')->with('flash_message','PowerSupply Added!');
     }
 
     public function show(string $id)
@@ -42,12 +42,12 @@ class PowerSupplyController extends Controller
         $power_supplie = PowerSupply::find($id);
         $input = $request->all();
         $power_supplie->update($input);
-        return redirect('power_supplie')->with('flash_message', 'PowerSupply Updated!');
+        return redirect('power_supply')->with('flash_message', 'PowerSupply Updated!');
     }
 
     public function destroy(string $id)
     {
         PowerSupply::destroy($id);
-        return redirect('power_supplie')->with('flash_message', 'PowerSupply deleted!');
+        return redirect('power_supply')->with('flash_message', 'PowerSupply deleted!');
     }
 }
