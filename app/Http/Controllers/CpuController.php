@@ -28,7 +28,7 @@ class CpuController extends Controller
     public function show(string $id)
     {
         $cpu = Cpu::find($id);
-        return view('cpus.show')->with('cpus',$cpu);
+        return view('cpus.show', ['cpus' => $cpu]);
     }
 
     public function edit(string $id)

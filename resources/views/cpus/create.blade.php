@@ -12,7 +12,7 @@
             Return to Main
         </a>
         <br/>
-        <form action="{{ url('cpu') }}" method="post">
+        <form action="{{ route('store.cpu') }}" method="post">
             {!! csrf_field() !!}
             <label>Brand</label><br />
             <input type="text" name="brand" id="brand" class="form-control"><br />
