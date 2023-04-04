@@ -42,3 +42,8 @@ Route::resource('/storage', StorageController::class);
 Route::resource('/power_supply', PowerSupplyController::class);
 
 Route::resource('/motherboard', MotherboardController::class);
+
+
+Route::resource('/pc_part', PcPartController::class);
+
+Route::post('/pc_part/create', [PcPartController::class, 'store']);

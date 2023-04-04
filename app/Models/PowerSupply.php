@@ -11,4 +11,9 @@ class PowerSupply extends Model
     protected $table = 'power_supplies';
     protected $primaryKey = 'id';
     protected $fillable = ['brand', 'name', 'wattage', 'efficiency_rating', 'modularity', 'fan_size', 'price'];
+
+    public function pc_parts()
+    {
+        return $this->hasMany(PcPart::class);
+    }
 }

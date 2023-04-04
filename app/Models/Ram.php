@@ -12,4 +12,9 @@ class Ram extends Model
     protected $table = 'rams';
     protected $primaryKey = 'id';
     protected $fillable = ['brand', 'name', 'type', 'capacity', 'speed', 'modules', 'price'];
+
+    public function pc_parts()
+    {
+        return $this->hasMany(PcPart::class);
+    }
 }

@@ -12,4 +12,9 @@ class CpuCooler extends Model
     protected $table='cpu_coolers';
     protected $primarykey ='id';
     protected $fillable = ['name', 'type', 'noise_level', 'fan_size','height', 'dimensions', 'price'];
+
+    public function pc_parts()
+    {
+        return $this->hasMany(PcPart::class);
+    }
 }
