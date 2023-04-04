@@ -8,6 +8,7 @@ use App\Http\Controllers\PowerSupplyController;
 use App\Http\Controllers\RamController;
 use App\Http\Controllers\StorageController;
 use App\Http\Controllers\TowerController;
+use App\Http\Controllers\PcPartController;
 use Illuminate\Support\Facades\Route;
 
 /*
