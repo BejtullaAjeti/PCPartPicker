@@ -41,6 +41,7 @@ Route::resource('/pc_part', PcPartController::class);
 Route::post('/pc_part/create', [PcPartController::class, 'store']);
 
 
+
 Auth::routes();
 
 //cpu
@@ -124,3 +125,6 @@ Route::get('/tower/edit/{id}', [App\Http\Controllers\TowerController::class, 'ed
 Route::put('admin/home/tower/{id}', [TowerController::class, 'update'])->name('tower.update')->middleware('is_admin');;
 Route::put('/admin/home/tower/update', [App\Http\Controllers\TowerController::class, 'update'])->name('update.tower')->middleware('is_admin');
 Route::delete('/admin/home/tower/delete/{id}', [App\Http\Controllers\TowerController::class, 'destroy'])->name('delete.tower')->middleware('is_admin');
+
+//pcpart-admin
+Route::get('/view', [PcPartController::class, 'adminView'])->middleware('is_admin');

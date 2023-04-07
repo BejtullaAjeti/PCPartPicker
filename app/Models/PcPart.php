@@ -11,7 +11,7 @@ class PcPart extends Model
     use HasFactory;
 
     //protected $table = 'pc_parts';
-    protected $fillable = ['cpus_id', 'gpus_id', 'rams_id', 'power_supplies_id', 'cpu_coolers_id', 'casees_id', 'storages_id' ,'motherboards_id'];
+    protected $fillable = ['cpus_id', 'gpus_id', 'rams_id', 'power_supplies_id', 'cpu_coolers_id', 'towers_id', 'storages_id' ,'motherboards_id', 'user_id'];
 
     public function cpus()
     {
@@ -34,7 +34,7 @@ class PcPart extends Model
     {
         return $this->belongsTo(CpuCooler::class);
     }
-    public function casees()
+    public function towers()
     {
         return $this->belongsTo(Tower::class);
     }
@@ -45,6 +45,11 @@ class PcPart extends Model
     public function motherboards()
     {
         return $this->belongsTo(Motherboard::class);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 
 

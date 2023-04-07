@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Models\Tower;
 use App\Models\Cpu;
 use App\Models\CpuCooler;
@@ -11,6 +12,7 @@ use App\Models\PcPart;
 use App\Models\PowerSupply;
 use App\Models\Ram;
 use App\Models\Storage;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class PcPartController extends Controller
@@ -18,21 +20,12 @@ class PcPartController extends Controller
 
     public function index()
     {
-        /*$cpus = Cpu::all();
-        $gpus = Gpu::all();
-        $rams = Ram::all();
-        $power_supplies = PowerSupply::all();
-        $cpu_coolers = CpuCooler::all();
-        $towers = Tower::all();
-        $storages= Storage::all(); 
-        $motherboards = Motherboard::all();
-
-        return view('pc_parts.index', compact('cpus', 'gpus', 'rams', 'power_supplies','cpu_coolers','towers','storages', 'motherboards'));
-        */
-
-        $pc_parts = PcPart::with(['cpus', 'gpus', 'rams', 'power_supplies', 'cpu_coolers', 'towers', 'storages', 'motherboards'])->get();
-
-        return view('pc_parts.index', compact('pc_parts'));
+        if (auth()->user()->is_admin) {
+            $pc_parts = PcPart::with(['cpus', 'gpus', 'rams', 'power_supplies', 'cpu_coolers', 'towers', 'storages', 'motherboards'])->get();
+        } else {
+            $pc_parts = auth()->user()->pcBuilds;
+        }
+            return view('pc_parts.index', compact('pc_parts'));
     
     }
 
@@ -100,6 +93,8 @@ class PcPartController extends Controller
                 'storages_id' => 'required',
                 'motherboards_id' => 'required',
             ]);
+
+            $validatedData['user_id'] = auth()->user()->id;
         
             $pc_part = PcPart::create($validatedData);
         
@@ -116,6 +111,11 @@ class PcPartController extends Controller
     public function show($id)
         {
             $pc_part = PcPart::findOrFail($id);
+            
+            if($pc_part->user_id !== auth()->id() && !auth()->user()->is_admin ){
+                abort(403,'Unauthorized action.');
+            }
+
             $cpus = Cpu::all();
             $gpus = Gpu::all();
             $rams = Ram::all();
@@ -124,13 +124,10 @@ class PcPartController extends Controller
             $towers = Tower::all();
             $storages = Storage::all();
             $motherboards = Motherboard::all();
-
+            
+          
             return view('pc_parts.show', compact('pc_part', 'cpus', 'gpus', 'rams', 'power_supplies', 'cpu_coolers', 'towers', 'storages', 'motherboards'));
-            /*
-            $pc_parts = PcPart::with(['cpus', 'gpus', 'rams', 'power_supplies', 'cpu_coolers', 'towers', 'storages', 'motherboards'])->get();
-
-            return view('pc_parts.show', compact('pc_parts'));
-            */
+           
         }
 
         public function edit($id)
@@ -172,6 +169,12 @@ class PcPartController extends Controller
             $pc_part->delete();
 
             return redirect('pc_part')->with('success', 'PC Part deleted successfully!');
+        }
+
+        public function adminView()
+        {
+            $pc_parts = PcPart::with('user')->get(); // get all PC parts with associated user information
+            return view('view', compact('pc_parts'));
         }
 
 

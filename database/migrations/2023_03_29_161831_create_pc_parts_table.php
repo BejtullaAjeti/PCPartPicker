@@ -34,6 +34,10 @@ return new class extends Migration
             $table->foreign('storages_id')->references('id')->on('storages')->onDelete('cascade');
             $table->foreign('motherboards_id')->references('id')->on('motherboards')->onDelete('cascade');
 
+            //for user id 
+            $table->unsignedBigInteger('user_id')->nullable(); 
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+        
         });
     }
 
