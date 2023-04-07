@@ -8,10 +8,10 @@
                         <h2>GPU</h2>
                     </div>
                     <div class="card-body">
-                        <a href="{{ url('/gpu/create') }}" class="btn btn-success btn-sm" title="Add New GPU">
+                        <a href="{{ route('create.gpu') }}" class="btn btn-success btn-sm" title="Add New GPU">
                             Add New
                         </a>
-                        <a href="{{ url('') }}" class="btn btn-success btn-sm" title="Turn Back to Main" >
+                        <a href="{{ route('admin.home') }}" class="btn btn-success btn-sm" title="Turn Back to Main" >
                             Return to Main
                         </a>
                         <br/>
@@ -50,9 +50,9 @@
                                             <td>{{ $item->price}}</td>
 
                                             <td>
-                                                <a href="{{ url('/gpu/' . $item->id) }}" title="View GPU"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i>View</button></a>
-                                                <a href="{{ url('/gpu/' . $item->id . '/edit')}}" title="Edit GPU"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Edit</button></a>
-                                                <form method="post" action="{{ url('/gpu' . '/' . $item->id )}}" accept-charset="UTF-8" style="display:inline">
+                                                <a href="{{ route('show.gpu.details', $item->id) }}" title="View GPU"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i>View</button></a>
+                                                <a href="{{ route('edit.gpu', ['id' => $item->id]) }}" title="Edit GPU"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Edit</button></a>
+                                                <form method="post" action="{{ route('delete.gpu', ['id' => $item->id]) }}" accept-charset="UTF-8" style="display:inline">
                                                     {{ method_field('DELETE') }}
                                                     {{ csrf_field() }}
                                                    <button type="submit" class="btn btn-danger btn-sm" title="Delete GPU" onclick="return confirm('Confirm delete?')"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Delete</button>

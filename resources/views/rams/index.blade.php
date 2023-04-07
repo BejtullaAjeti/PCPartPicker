@@ -8,10 +8,10 @@
                         <h2>RAM</h2>
                     </div>
                     <div class="card-body">
-                        <a href="{{ url('/ram/create') }}" class="btn btn-success btn-sm" title="Add New RAM">
+                        <a href="{{ route('create.ram') }}" class="btn btn-success btn-sm" title="Add New RAM">
                             Add New
                         </a>
-                        <a href="{{ url('') }}" class="btn btn-success btn-sm" title="Turn Back to Main" >
+                        <a href="{{ route('admin.home') }}" class="btn btn-success btn-sm" title="Turn Back to Main" >
                             Return to Main
                         </a>
                         <br/>
@@ -44,9 +44,9 @@
                                             <td>{{ $item->price}}</td>
 
                                             <td>
-                                                <a href="{{ url('/ram/' . $item->id) }}" title="View RAM"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i>View</button></a>
-                                                <a href="{{ url('/ram/' . $item->id . '/edit')}}" title="Edit RAM"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Edit</button></a>
-                                                <form method="post" action="{{ url('/ram' . '/' . $item->id )}}" accept-charset="UTF-8" style="display:inline">
+                                                <a href="{{ route('show.ram.details', $item->id) }} title="View RAM"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i>View</button></a>
+                                                <a href="{{ route('edit.ram', ['id' => $item->id]) }}" title="Edit RAM"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Edit</button></a>
+                                                <form method="post" action="{{ route('delete.ram', ['id' => $item->id]) }}" accept-charset="UTF-8" style="display:inline">
                                                     {{ method_field('DELETE') }}
                                                     {{ csrf_field() }}
                                                    <button type="submit" class="btn btn-danger btn-sm" title="Delete RAM" onclick="return confirm('Confirm delete?')"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Delete</button>

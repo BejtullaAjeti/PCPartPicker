@@ -4,15 +4,15 @@
     <div class="card" style="margin: 20px;">
         <div class="card-header">Edit GPU</div>
         <div class="card-body">
-            <a href="{{ url('/gpu/') }}" class="btn btn-success btn-sm" title="Add New GPU">
+            <a href="{{ route('index.gpu') }}" class="btn btn-success btn-sm" title="Add New GPU">
                 Return to GPU's
             </a>
-            <a href="{{ url('') }}" class="btn btn-success btn-sm" title="Turn Back to Main">
+            <a href="{{ route('admin.home') }}" class="btn btn-success btn-sm" title="Turn Back to Main" >
                 Return to Main
             </a>
-            <form action="{{url('gpu/' . $gpus->id) }}" method="post">
+            <form action="{{ route('gpu.update', $gpus->id) }}" method="post">
                 {!! csrf_field() !!}
-                @method("PATCH")
+                @method("PUT")
                 <input type="hidden" name="id" id="id" value="{{$gpus->id}}" id="id"/>
                 <label>Brand</label><br/>
                 <input type="text" name="brand" id="brand" value="{{$gpus->brand}}" class="form-control"><br/>

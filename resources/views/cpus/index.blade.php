@@ -11,7 +11,7 @@
                         <a href="{{ route('create.cpu') }}" class="btn btn-success btn-sm" title="Add New CPU">
                             Add New
                         </a>
-                        <a href="{{ url('') }}" class="btn btn-success btn-sm" title="Turn Back to Main" >
+                        <a href="{{ route('admin.home') }}" class="btn btn-success btn-sm" title="Turn Back to Main" >
                             Return to Main
                         </a>
                         <br/>

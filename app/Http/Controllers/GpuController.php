@@ -28,7 +28,7 @@ class GpuController extends Controller
     public function show(string $id)
     {
         $gpu = Gpu::find($id);
-        return view('gpus.show')->with('gpus',$gpu);
+        return view('gpus.show', ['gpus' => $gpu]);
     }
 
     public function edit(string $id)
@@ -50,5 +50,6 @@ class GpuController extends Controller
         Gpu::destroy($id);
         return redirect('gpu')->with('flash_message', 'GPU deleted!');
     }
+
 
 }

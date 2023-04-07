@@ -8,8 +8,11 @@
                         <h2>MOTHERBOARD</h2>
                     </div>
                     <div class="card-body">
-                        <a href="{{ url('/motherboard/create') }}" class="btn btn-success btn-sm" title="Add New MOTHERBOARD">
+                        <a href="{{ route('create.motherboard') }}" class="btn btn-success btn-sm" title="Add New GPU">
                             Add New
+                        </a>
+                        <a href="{{ route('admin.home') }}" class="btn btn-success btn-sm" title="Turn Back to Main" >
+                            Return to Main
                         </a>
                         <br/>
                         <br/>
@@ -48,9 +51,9 @@
                                             <td>{{ $item->price}}</td>
 
                                             <td>
-                                                <a href="{{ url('/motherboard/' . $item->id) }}" title="View MOTHERBOARD"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i>View</button></a>
-                                                <a href="{{ url('/motherboard/' . $item->id . '/edit')}}" title="Edit MOTHERBOARD"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Edit</button></a>
-                                                <form method="post" action="{{ url('/motherboard' . '/' . $item->id )}}" accept-charset="UTF-8" style="display:inline">
+                                                <a href="{{ route('show.motherboard.details', $item->id) }}" title="View MOTHERBOARD"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i>View</button></a>
+                                                <a href="{{ route('edit.motherboard', ['id' => $item->id]) }}" title="Edit MOTHERBOARD"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Edit</button></a>
+                                                <form method="post" action="{{ route('delete.motherboard', ['id' => $item->id]) }}" accept-charset="UTF-8" style="display:inline">
                                                     {{ method_field('DELETE') }}
                                                     {{ csrf_field() }}
                                                    <button type="submit" class="btn btn-danger btn-sm" title="Delete MOTHERBOARD" onclick="return confirm('Confirm delete?')"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Delete</button>

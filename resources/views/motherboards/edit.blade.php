@@ -5,10 +5,17 @@
     <div class="card-header">Edit MOTHERBOARD</div>
     <div class="card-body">
 
+        <a href="{{ route('index.motherboard') }}" class="btn btn-success btn-sm" title="Add New MOTHERBOARD">
+            Return to MOTHERBOARD's
+        </a>
+        <a href="{{ route('admin.home') }}" class="btn btn-success btn-sm" title="Turn Back to Main" >
+            Return to Main
+        </a>
 
-    <form action="{{url('motherboard/' . $motherboards->id) }}" method="post">
+
+    <form action="{{ route('motherboard.update', $motherboards->id) }}" method="post">
         {!! csrf_field() !!}
-        @method("PATCH")
+        @method("PUT")
         <input type="hidden" name="id" id="id" value="{{$motherboards->id}}" id="id" />
         <label>Brand</label><br />
         <input type="text" name="brand" id="brand" value="{{$motherboards->brand}}" class="form-control"><br />

@@ -5,7 +5,14 @@
     <div class="card-header">Add New POWER SUPPLY</div>
 
     <div class="card-body">
-        <form action="{{ url('power_supply') }}" method="post">
+        <a href="{{ route('index.power_supply') }}" class="btn btn-success btn-sm" title="Add New POWER SUPPLY">
+            Return to POWER SUPPLIE's
+        </a>
+        <a href="{{ route('admin.home') }}" class="btn btn-success btn-sm" title="Turn Back to Main" >
+            Return to Main
+        </a>
+        <br />
+        <form action="{{ route('store.power_supply') }}"method="post">
             {!! csrf_field() !!}
             <label>Brand</label><br />
             <input type="text" name="brand" id="brand" class="form-control"><br />

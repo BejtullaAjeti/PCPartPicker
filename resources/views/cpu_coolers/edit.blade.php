@@ -4,11 +4,17 @@
 <div class="card" style="margin: 20px;">
     <div class="card-header">Edit CPU COOLER</div>
     <div class="card-body">
+        <a href="{{ route('index.cpu_cooler') }}" class="btn btn-success btn-sm" title="Add New CPU COOLER">
+            Return to CPU COOLER's
+        </a>
+        <a href="{{ route('admin.home') }}" class="btn btn-success btn-sm" title="Turn Back to Main" >
+            Return to Main
+        </a>
+        <br/>
 
-
-    <form action="{{url('cpu_cooler/' . $cpu_coolers->id) }}" method="post">
+    <form action="{{ route('cpu_cooler.update', $cpu_coolers->id) }}" method="post">
         {!! csrf_field() !!}
-        @method("PATCH")
+        @method("PUT")
         <input type="hidden" name="id" id="id" value="{{$cpu_coolers->id}}" id="id" />
         <label>Brand</label><br />
         <input type="text" name="brand" id="brand" value="{{$cpu_coolers->brand}}" class="form-control"><br />

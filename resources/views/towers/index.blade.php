@@ -8,10 +8,10 @@
                         <h2>CASE</h2>
                     </div>
                     <div class="card-body">
-                        <a href="{{ url('/tower/create') }}" class="btn btn-success btn-sm" title="Add New CASE">
+                        <a href="{{ route('create.tower') }}" class="btn btn-success btn-sm" title="Add New CASE">
                             Add New
                         </a>
-                        <a href="{{ url('') }}" class="btn btn-success btn-sm" title="Turn Back to Main" >
+                        <a href="{{ route('admin.home') }}" class="btn btn-success btn-sm" title="Turn Back to Main" >
                             Return to Main
                         </a>
                         <br/>
@@ -44,17 +44,17 @@
                                         <td>{{ $item->price}}</td>
 
                                         <td>
-                                            <a href="{{ url('/tower/' . $item->id) }}" title="View CASE">
+                                            <a href="{{ route('show.tower.details', $item->id) }}" title="View CASE">
                                                 <button class="btn btn-info btn-sm"><i class="fa fa-eye"
                                                                                        aria-hidden="true"></i>View
                                                 </button>
                                             </a>
-                                            <a href="{{ url('/tower/' . $item->id . '/edit')}}" title="Edit CASE">
+                                            <a href="{{ route('edit.tower', ['id' => $item->id]) }}" title="Edit CASE">
                                                 <button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o"
                                                                                           aria-hidden="true"></i>Edit
                                                 </button>
                                             </a>
-                                            <form method="post" action="{{ url('/tower' . '/' . $item->id )}}"
+                                            <form method="post" action="{{ route('delete.tower', ['id' => $item->id]) }}"
                                                   accept-charset="UTF-8" style="display:inline">
                                                 {{ method_field('DELETE') }}
                                                 {{ csrf_field() }}

@@ -28,7 +28,7 @@ class MotherboardController extends Controller
     public function show(string $id)
     {
         $motherboard = Motherboard::find($id);
-        return view('motherboards.show')->with('motherboards',$motherboard);
+        return view('motherboards.show', ['motherboards' => $motherboard]);
     }
 
     public function edit(string $id)
@@ -50,4 +50,6 @@ class MotherboardController extends Controller
         Motherboard::destroy($id);
         return redirect('motherboard')->with('flash_message', 'MOTHERBOARD deleted!');
     }
+
+
 }

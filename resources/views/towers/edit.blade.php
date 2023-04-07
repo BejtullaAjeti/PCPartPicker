@@ -4,17 +4,18 @@
     <div class="card" style="margin: 20px;">
         <div class="card-header">Edit CASE</div>
         <div class="card-body">
+            <a href="{{ route('index.tower') }}" class="btn btn-success btn-sm" title="Add New CASE">
+                Return to CASE's
+            </a>
+            <a href="{{ route('admin.home') }}" class="btn btn-success btn-sm" title="Turn Back to Main" >
+                Return to Main
+            </a>
+            <br />
 
-
-            <form action="{{url('tower/' . $towers->id) }}" method="post">
-                <a href="{{ url('/tower/') }}" class="btn btn-success btn-sm" title="Add New CASE">
-                    Return to Towers
-                </a>
-                <a href="{{ url('') }}" class="btn btn-success btn-sm" title="Turn Back to Main" >
-                    Return to Main
-                </a>
+            <form action="{{ route('tower.update', $towers->id) }}" method="post">
+              
                 {!! csrf_field() !!}
-                @method("PATCH")
+                @method("PUT")
                 <input type="hidden" name="id" id="id" value="{{$towers->id}}" id="id"/>
                 <label>Brand</label><br/>
                 <input type="text" name="brand" id="brand" value="{{$towers->brand}}" class="form-control"><br/>

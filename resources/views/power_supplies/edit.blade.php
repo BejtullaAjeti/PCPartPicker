@@ -4,11 +4,18 @@
 <div class="card" style="margin: 20px;">
     <div class="card-header">Edit POWER SUPPLY</div>
     <div class="card-body">
+        <a href="{{ route('index.power_supply') }}" class="btn btn-success btn-sm" title="Add New POWER SUPPLY">
+            Return to POWER SUPPLIE's
+        </a>
+        <a href="{{ route('admin.home') }}" class="btn btn-success btn-sm" title="Turn Back to Main" >
+            Return to Main
+        </a>
+        <br />
 
 
-    <form action="{{url('power_supply/' . $power_supplies->id) }}" method="post">
+    <form action="{{ route('power_supply.update', $power_supplies->id) }}" method="post">
         {!! csrf_field() !!}
-        @method("PATCH")
+        @method("PUT")
         <input type="hidden" name="id" id="id" value="{{$power_supplies->id}}" id="id" />
         <label>Brand</label><br />
         <input type="text" name="brand" id="brand" value="{{$power_supplies->brand}}" class="form-control"><br />

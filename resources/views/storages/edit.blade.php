@@ -4,11 +4,18 @@
 <div class="card" style="margin: 20px;">
     <div class="card-header">Edit STORAGE</div>
     <div class="card-body">
+        <a href="{{ route('index.storage') }}" class="btn btn-success btn-sm" title="Add New STORAGE">
+            Return to STORAGE's
+        </a>
+        <a href="{{ route('admin.home') }}" class="btn btn-success btn-sm" title="Turn Back to Main" >
+            Return to Main
+        </a>
+        <br />
 
 
-    <form action="{{url('storage/' . $storages->id) }}" method="post">
+    <form action="{{ route('storage.update', $storages->id) }}" method="post">
         {!! csrf_field() !!}
-        @method("PATCH")
+        @method("PUT")
         <input type="hidden" name="id" id="id" value="{{$storages->id}}" id="id" />
         <label>Brand</label><br />
         <input type="text" name="brand" id="brand" value="{{$storages->brand}}" class="form-control"><br />

@@ -28,7 +28,7 @@ class PowerSupplyController extends Controller
     public function show(string $id)
     {
         $power_supplie = PowerSupply::find($id);
-        return view('power_supplies.show')->with('power_supplies',$power_supplie);
+        return view('power_supplies.show',['power_supplies' => $power_supplie]);
     }
 
     public function edit(string $id)

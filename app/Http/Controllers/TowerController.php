@@ -22,32 +22,34 @@ class TowerController extends Controller
     {
         $input = $request->all();
         Tower::create($input);
-        return redirect('tower')->with('flash_message','Tower Added!');
+        return redirect('tower')->with('flash_message','TOWER Addedd!');
     }
 
     public function show(string $id)
     {
-        $towers = Tower::find($id);
-        return view('towers.show')->with('towers',$towers);
+        $tower = Tower::find($id);
+        return view('towers.show', ['towers' => $tower]);
     }
 
     public function edit(string $id)
     {
-        $towers = Tower::find($id);
-        return view('towers.edit')->with('towers', $towers);
+        $tower = Tower::find($id);
+        return view('towers.edit')->with('towers', $tower);
     }
 
     public function update(Request $request, string $id)
     {
-        $towers = Tower::find($id);
+        $tower = Tower::find($id);
         $input = $request->all();
-        $towers->update($input);
-        return redirect('tower')->with('flash_message', 'Tower Updated!');
+        $tower->update($input);
+        return redirect('tower')->with('flash_message', 'TOWER Updated!');
     }
 
     public function destroy(string $id)
     {
         Tower::destroy($id);
-        return redirect('tower')->with('flash_message', 'Tower deleted!');
+        return redirect('tower')->with('flash_message', 'TOWER deleted!');
     }
+
+
 }
