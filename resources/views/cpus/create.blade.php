@@ -5,14 +5,14 @@
     <div class="card-header">Add New CPU</div>
 
     <div class="card-body">
-        <a href="{{ url('/cpu/') }}" class="btn btn-success btn-sm" title="Add New CPU">
+        <a href="{{ route('index.cpu') }}" class="btn btn-success btn-sm" title="Add New CPU">
             Return to CPU's
         </a>
-        <a href="{{ url('') }}" class="btn btn-success btn-sm" title="Turn Back to Main" >
+        <a href="{{ route('admin.home') }}" class="btn btn-success btn-sm" title="Turn Back to Main" >
             Return to Main
         </a>
         <br/>
-        <form action="{{ url('cpu') }}" method="post">
+        <form action="{{ route('store.cpu') }}" method="post">
             {!! csrf_field() !!}
             <label>Brand</label><br />
             <input type="text" name="brand" id="brand" class="form-control"><br />

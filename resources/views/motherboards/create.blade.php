@@ -5,7 +5,15 @@
     <div class="card-header">Add New MOTHERBOARD</div>
 
     <div class="card-body">
-        <form action="{{ url('motherboard') }}" method="post">
+        <a href="{{ route('index.motherboard') }}" class="btn btn-success btn-sm" title="Add New MOTHERBOARD">
+            Return to MOTHERBOARD's
+        </a>
+        <a href="{{ route('admin.home') }}" class="btn btn-success btn-sm" title="Turn Back to Main" >
+            Return to Main
+        </a>
+        <br />
+
+        <form action="{{ route('store.motherboard') }}" method="post">
             {!! csrf_field() !!}
             <label>Brand</label><br />
             <input type="text" name="brand" id="brand" class="form-control"><br />

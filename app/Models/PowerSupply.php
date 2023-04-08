@@ -10,5 +10,10 @@ class PowerSupply extends Model
     use HasFactory;
     protected $table = 'power_supplies';
     protected $primaryKey = 'id';
-    protected $fillable = ['name', 'wattage', 'efficiency_rating', 'modularity', 'fan_size','price'];
+    protected $fillable = ['brand', 'name', 'wattage', 'efficiency_rating', 'modularity', 'fan_size', 'price'];
+
+    public function pc_parts()
+    {
+        return $this->hasMany(PcPart::class);
+    }
 }

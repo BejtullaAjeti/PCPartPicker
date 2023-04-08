@@ -8,16 +8,20 @@
                         <h2>STORAGE</h2>
                     </div>
                     <div class="card-body">
-                        <a href="{{ url('/storage/create') }}" class="btn btn-success btn-sm" title="Add New STORAGE">
+                        <a href="{{ route('create.storage') }}" class="btn btn-success btn-sm" title="Add New STORAGE">
                             Add New
+                        </a>
+                        <a href="{{ route('admin.home') }}" class="btn btn-success btn-sm" title="Turn Back to Main" >
+                            Return to Main
                         </a>
                         <br/>
                         <br/>
-                        <div class="table-responsive"> 
+                        <div class="table-responsive">
                             <table class="table">
                                 <thead>
                                     <tr>
                                         <th>#</th>
+                                        <th>Brand</th>
                                         <th>Name</th>
                                         <th>Type</th>
                                         <th>Capacity</th>
@@ -33,6 +37,7 @@
                                     @foreach ($storages as $item)
                                         <tr>
                                             <td>{{ $loop->iteration}}</td>
+                                            <td>{{ $item->brand}}</td>
                                             <td>{{ $item->name}}</td>
                                             <td>{{ $item->type}}</td>
                                             <td>{{ $item->capacity}}</td>
@@ -43,14 +48,14 @@
                                             <td>{{ $item->price}}</td>
 
                                             <td>
-                                                <a href="{{ url('/storage/' . $item->id) }}" title="View STORAGE"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i>View</button></a>
-                                                <a href="{{ url('/storage/' . $item->id . '/edit')}}" title="Edit STORAGE"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Edit</button></a>
-                                                <form method="post" action="{{ url('/storage' . '/' . $item->id )}}" accept-charset="UTF-8" style="display:inline">
+                                                <a href="{{ route('show.storage.details', $item->id) }}" title="View STORAGE"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i>View</button></a>
+                                                <a href="{{ route('edit.storage', ['id' => $item->id]) }}"title="Edit STORAGE"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Edit</button></a>
+                                                <form method="post" action="{{ route('delete.storage', ['id' => $item->id]) }}" accept-charset="UTF-8" style="display:inline">
                                                     {{ method_field('DELETE') }}
                                                     {{ csrf_field() }}
                                                    <button type="submit" class="btn btn-danger btn-sm" title="Delete STORAGE" onclick="return confirm('Confirm delete?')"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Delete</button>
                                                 </form>
-                                               
+
                                             </td>
 
                                         </tr>
@@ -65,5 +70,5 @@
         </div>
 
     </div>
-    
+
 @endsection

@@ -14,4 +14,9 @@ class Cpu extends Model
     protected $fillable = ['brand','name','socket','cores', 'threads', 'base_clock','turbo' ,'ram_type','ram_speed','tdp','price'];
 
 
+    public function pc_parts()
+    {
+        return $this->hasMany(PcPart::class);
+    }
+
 }

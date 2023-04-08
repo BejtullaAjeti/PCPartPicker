@@ -5,6 +5,7 @@
 <div class="card-header">CPU COOLER Page</div>
 <div class="card-body">
     <div class="card-body">
+        <h5 class="card-title">Brand : {{ $cpu_coolers->brand}}</h5>
         <h5 class="card-title">Name : {{ $cpu_coolers->name}}</h5>
         <h5 class="card-title">Type : {{ $cpu_coolers->type}}</h5>
         <h5 class="card-title">Noise Level : {{ $cpu_coolers->noise_level}}</h5>

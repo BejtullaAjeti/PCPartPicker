@@ -22,13 +22,13 @@ class GpuController extends Controller
     {
         $input = $request->all();
         Gpu::create($input);
-        return redirect('gpu')->with('flash_message','GPU Addedd!');
+        return redirect()->route('index.gpu')->with('flash_message','GPU Addedd!');
     }
 
     public function show(string $id)
     {
         $gpu = Gpu::find($id);
-        return view('gpus.show')->with('gpus',$gpu);
+        return view('gpus.show', ['gpus' => $gpu]);
     }
 
     public function edit(string $id)
@@ -42,13 +42,14 @@ class GpuController extends Controller
         $gpu = Gpu::find($id);
         $input = $request->all();
         $gpu->update($input);
-        return redirect('gpu')->with('flash_message', 'GPU Updated!');
+        return redirect()->route('index.gpu')->with('flash_message', 'GPU Updated!');
     }
 
     public function destroy(string $id)
     {
         Gpu::destroy($id);
-        return redirect('gpu')->with('flash_message', 'GPU deleted!');
+        return redirect()->route('index.gpu')->with('flash_message', 'GPU deleted!');
     }
+
 
 }

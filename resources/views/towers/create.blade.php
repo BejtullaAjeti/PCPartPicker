@@ -5,13 +5,15 @@
         <div class="card-header">Add New CASE</div>
 
         <div class="card-body">
-            <form action="{{ url('tower') }}" method="post">
-                <a href="{{ url('/tower/') }}" class="btn btn-success btn-sm" title="Add New CASE">
-                    Return to Towers
-                </a>
-                <a href="{{ url('') }}" class="btn btn-success btn-sm" title="Turn Back to Main" >
-                    Return to Main
-                </a>
+            <a href="{{ route('index.tower') }}" class="btn btn-success btn-sm" title="Add New CASE">
+                Return to CASE's
+            </a>
+            <a href="{{ route('admin.home') }}" class="btn btn-success btn-sm" title="Turn Back to Main" >
+                Return to Main
+            </a>
+            <br />
+            <form action="{{ route('store.tower') }}" method="post">
+                
                 {!! csrf_field() !!}
                 <label>Brand</label><br/>
                 <input type="text" name="brand" id="brand" class="form-control"><br/>

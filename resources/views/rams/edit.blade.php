@@ -4,17 +4,18 @@
 <div class="card" style="margin: 20px;">
     <div class="card-header">Edit RAM</div>
     <div class="card-body">
-        <a href="{{ url('/ram/') }}" class="btn btn-success btn-sm" title="Add New CPU">
+        <a href="{{ route('index.ram') }}" class="btn btn-success btn-sm" title="Add New RAM">
             Return to RAM's
         </a>
-        <a href="{{ url('') }}" class="btn btn-success btn-sm" title="Turn Back to Main" >
+        <a href="{{ route('admin.home') }}" class="btn btn-success btn-sm" title="Turn Back to Main" >
             Return to Main
         </a>
+        <br />
 
 
-    <form action="{{url('ram/' . $rams->id) }}" method="post">
+    <form action="{{ route('ram.update', $rams->id) }}" method="post">
         {!! csrf_field() !!}
-        @method("PATCH")
+        @method("PUT")
         <input type="hidden" name="id" id="id" value="{{$rams->id}}" id="id" />
         <label>Brand</label><br />
         <input type="text" name="brand" id="brand" value="{{$rams->brand}}" class="form-control"><br />

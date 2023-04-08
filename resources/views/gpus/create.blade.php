@@ -5,13 +5,13 @@
     <div class="card-header">Add New GPU</div>
 
     <div class="card-body">
-        <a href="{{ url('/gpu/') }}" class="btn btn-success btn-sm" title="Add New GPU">
+        <a href="{{ route('index.gpu') }}" class="btn btn-success btn-sm" title="Add New GPU">
             Return to GPU's
         </a>
-        <a href="{{ url('') }}" class="btn btn-success btn-sm" title="Turn Back to Main" >
+        <a href="{{ route('admin.home') }}" class="btn btn-success btn-sm" title="Turn Back to Main" >
             Return to Main
         </a>
-        <form action="{{ url('gpu') }}" method="post">
+        <form action="{{ route('store.gpu') }}" method="post">
             {!! csrf_field() !!}
             <label>Brand</label><br />
             <input type="text" name="brand" id="brand" class="form-control"><br />

@@ -4,18 +4,18 @@
 <div class="card" style="margin: 20px;">
     <div class="card-header">Edit CPU</div>
     <div class="card-body">
-        <a href="{{ url('/cpu/') }}" class="btn btn-success btn-sm" title="Add New CPU">
+        <a href="{{ route('index.cpu') }}" class="btn btn-success btn-sm" title="Add New CPU">
             Return to CPU's
         </a>
-        <a href="{{ url('') }}" class="btn btn-success btn-sm" title="Turn Back to Main" >
+        <a href="{{ route('admin.home') }}" class="btn btn-success btn-sm" title="Turn Back to Main" >
             Return to Main
         </a>
         <br/>
 
 
-    <form action="{{url('cpu/' . $cpus->id) }}" method="post">
+    <form action="{{ route('cpu.update', $cpus->id) }}" method="post">
         {!! csrf_field() !!}
-        @method("PATCH")
+        @method("PUT")
         <input type="hidden" name="id" id="id" value="{{$cpus->id}}" id="id" />
         <label>Brand</label>
         <input type="text" name="brand" id="brand" value="{{$cpus->brand}}" class="form-control" /><br/>

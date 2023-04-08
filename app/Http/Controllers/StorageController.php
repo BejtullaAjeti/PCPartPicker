@@ -22,13 +22,13 @@ class StorageController extends Controller
     {
         $input = $request->all();
         Storage::create($input);
-        return redirect('storage')->with('flash_message','Storage Addedd!');
+        return redirect()->route('index.storage')->with('flash_message','STORAGE Addedd!');
     }
 
     public function show(string $id)
     {
         $storage = Storage::find($id);
-        return view('storages.show')->with('storages',$storage);
+        return view('storages.show', ['storages' => $storage]);
     }
 
     public function edit(string $id)
@@ -42,12 +42,14 @@ class StorageController extends Controller
         $storage = Storage::find($id);
         $input = $request->all();
         $storage->update($input);
-        return redirect('storage')->with('flash_message', 'Storage Updated!');
+        return redirect()->route('index.storage')->with('flash_message', 'STORAGE Updated!');
     }
 
     public function destroy(string $id)
     {
         Storage::destroy($id);
-        return redirect('storage')->with('flash_message', 'Storage deleted!');
+        return redirect()->route('index.storage')->with('flash_message', 'STORAGE deleted!');
     }
+
+
 }

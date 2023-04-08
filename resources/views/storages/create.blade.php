@@ -5,8 +5,17 @@
     <div class="card-header">Add New STORAGE</div>
 
     <div class="card-body">
-        <form action="{{ url('storage') }}" method="post">
+        <a href="{{ route('index.storage') }}" class="btn btn-success btn-sm" title="Add New STORAGE">
+            Return to STORAGE's
+        </a>
+        <a href="{{ route('admin.home') }}" class="btn btn-success btn-sm" title="Turn Back to Main" >
+            Return to Main
+        </a>
+        <br />
+        <form action="{{ route('store.storage') }}" method="post">
             {!! csrf_field() !!}
+            <label>Brand</label><br />
+            <input type="text" name="brand" id="brand" class="form-control"><br />
             <label>Name</label><br />
             <input type="text" name="name" id="name" class="form-control"><br />
             <label>Type</label>
@@ -23,7 +32,7 @@
             <input type="text" name="write_speed" id="write_speed" class="form-control"><br />
             <label>Price</label>
             <input type="text" name="price" id="price" class="form-control"><br />
-            
+
             <input type="submit" value="Save" class="btn btn-success"><br />
         </form>
 

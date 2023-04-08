@@ -13,4 +13,9 @@ class Tower extends Model
     protected $primaryKey = 'id';
     protected $fillable = ['brand', 'name', 'type', 'color', 'material', 'dimensions' , 'price'];
 
+
+    public function pc_parts()
+    {
+        return $this->hasMany(PcPart::class);
+    }
 }
