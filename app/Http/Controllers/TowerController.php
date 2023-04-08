@@ -22,7 +22,7 @@ class TowerController extends Controller
     {
         $input = $request->all();
         Tower::create($input);
-        return redirect('tower')->with('flash_message','TOWER Addedd!');
+        return redirect()->route('index.tower')->with('flash_message','TOWER Addedd!');
     }
 
     public function show(string $id)
@@ -42,13 +42,13 @@ class TowerController extends Controller
         $tower = Tower::find($id);
         $input = $request->all();
         $tower->update($input);
-        return redirect('tower')->with('flash_message', 'TOWER Updated!');
+        return redirect()->route('index.tower')->with('flash_message', 'TOWER Updated!');
     }
 
     public function destroy(string $id)
     {
         Tower::destroy($id);
-        return redirect('tower')->with('flash_message', 'TOWER deleted!');
+        return redirect()->route('index.tower')->with('flash_message', 'TOWER deleted!');
     }
 
 

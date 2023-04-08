@@ -37,8 +37,7 @@ Route::get('/', function(){
 //Route::resource('/storage', StorageController::class);
 //Route::resource('/power_supply', PowerSupplyController::class);
 //Route::resource('/motherboard', MotherboardController::class);
-Route::resource('/pc_part', PcPartController::class);
-Route::post('/pc_part/create', [PcPartController::class, 'store']);
+
 
 
 
@@ -126,5 +125,11 @@ Route::put('admin/home/tower/{id}', [TowerController::class, 'update'])->name('t
 Route::put('/admin/home/tower/update', [App\Http\Controllers\TowerController::class, 'update'])->name('update.tower')->middleware('is_admin');
 Route::delete('/admin/home/tower/delete/{id}', [App\Http\Controllers\TowerController::class, 'destroy'])->name('delete.tower')->middleware('is_admin');
 
+
+Route::resource('/pc_part', PcPartController::class);
+
+//Route::get('/pc_part/index', [PcPartController::class, 'index' ])->name('index.pcpart');
+Route::post('/pc_part/create', [PcPartController::class, 'store']);
+
 //pcpart-admin
-Route::get('/view', [PcPartController::class, 'adminView'])->middleware('is_admin');
+Route::get('/admin/view', [PcPartController::class, 'adminView'])->name('admin.view')->middleware('is_admin');
