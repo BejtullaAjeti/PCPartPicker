@@ -185,6 +185,7 @@ return [
         /*
          * Package Service Providers...
          */
+        Cartalyst\Sentinel\Laravel\SentinelServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -210,6 +211,7 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         // 'ExampleClass' => App\Example\ExampleClass::class,
+        'Sentinel' => Cartalyst\Sentinel\Laravel\Facades\Sentinel::class,
     ])->toArray(),
 
 ];

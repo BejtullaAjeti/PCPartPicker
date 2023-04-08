@@ -22,7 +22,7 @@ class CpuCoolerController extends Controller
     {
         $input = $request->all();
         CpuCooler::create($input);
-        return redirect('cpu_cooler')->with('flash_message','CPU COOLER Addedd!');
+        return redirect()->route('index.cpu_cooler')->with('flash_message','CPU COOLER Addedd!');
     }
 
     public function show(string $id)
@@ -42,13 +42,13 @@ class CpuCoolerController extends Controller
         $cpu_cooler = CpuCooler::find($id);
         $input = $request->all();
         $cpu_cooler->update($input);
-        return redirect('cpu_cooler')->with('flash_message', 'CPU COOLER Updated!');
+        return redirect()->route('index.cpu_cooler')->with('flash_message', 'CPU COOLER Updated!');
     }
 
     public function destroy(string $id)
     {
         CpuCooler::destroy($id);
-        return redirect('cpu_cooler')->with('flash_message', 'CPU COOLER deleted!');
+        return redirect()->route('index.cpu_cooler')->with('flash_message', 'CPU COOLER deleted!');
     }
 
 

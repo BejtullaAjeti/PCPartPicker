@@ -22,7 +22,7 @@ class CpuController extends Controller
     {
         $input = $request->all();
         Cpu::create($input);
-        return redirect('cpu')->with('flash_message','CPU Addedd!');
+        return redirect()->route('index.cpu')->with('flash_message','CPU Addedd!');
     }
 
     public function show(string $id)
@@ -42,13 +42,13 @@ class CpuController extends Controller
         $cpu = Cpu::find($id);
         $input = $request->all();
         $cpu->update($input);
-        return redirect('cpu')->with('flash_message', 'CPU Updated!');
+        return redirect()->route('index.cpu')->with('flash_message', 'CPU Updated!');
     }
 
     public function destroy(string $id)
     {
         Cpu::destroy($id);
-        return redirect('cpu')->with('flash_message', 'CPU deleted!');
+        return redirect()->route('index.cpu')->with('flash_message', 'CPU deleted!');
     }
 
 

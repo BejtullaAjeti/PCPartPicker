@@ -22,7 +22,7 @@ class MotherboardController extends Controller
     {
         $input = $request->all();
         Motherboard::create($input);
-        return redirect('motherboard')->with('flash_message','MOTHERBOARD Addedd!');
+        return redirect()->route('index.motherboard')->with('flash_message','MOTHERBOARD Addedd!');
     }
 
     public function show(string $id)
@@ -42,13 +42,13 @@ class MotherboardController extends Controller
         $motherboard = Motherboard::find($id);
         $input = $request->all();
         $motherboard->update($input);
-        return redirect('motherboard')->with('flash_message', 'MOTHERBOARD Updated!');
+        return redirect()->route('index.motherboard')->with('flash_message', 'MOTHERBOARD Updated!');
     }
 
     public function destroy(string $id)
     {
         Motherboard::destroy($id);
-        return redirect('motherboard')->with('flash_message', 'MOTHERBOARD deleted!');
+        return redirect()->route('index.motherboard')->with('flash_message', 'MOTHERBOARD deleted!');
     }
 
 
