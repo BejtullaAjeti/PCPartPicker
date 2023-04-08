@@ -30,7 +30,7 @@ Route::get('/', function(){
 
 
 //Route::resource("/cpu", CpuController::class);
-//Route::resource("/gpu", GpuController::class);    
+//Route::resource("/gpu", GpuController::class);
 //Route::resource("/ram", RamController::class);
 //Route::resource('/tower', TowerController::class);
 //Route::resource('/cpu_cooler', CpuCoolerController::class);
