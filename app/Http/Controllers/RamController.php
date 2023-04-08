@@ -22,7 +22,7 @@ class RamController extends Controller
     {
         $input = $request->all();
         Ram::create($input);
-        return redirect('ram')->with('flash_message','RAM Addedd!');
+        return redirect()->route('index.ram')->with('flash_message','RAM Addedd!');
     }
 
     public function show(string $id)
@@ -42,13 +42,13 @@ class RamController extends Controller
         $ram = Ram::find($id);
         $input = $request->all();
         $ram->update($input);
-        return redirect('ram')->with('flash_message', 'RAM Updated!');
+        return redirect()->route('index.ram')->with('flash_message', 'RAM Updated!');
     }
 
     public function destroy(string $id)
     {
         Ram::destroy($id);
-        return redirect('ram')->with('flash_message', 'RAM deleted!');
+        return redirect()->route('index.ram')->with('flash_message', 'RAM deleted!');
     }
 
 

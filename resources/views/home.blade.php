@@ -21,6 +21,9 @@
                     <h3>Welcomee to the User Dashboard</h3>
                     {{ __('You are logged in!') }}
                 </div>
+                <div>
+                    <p><a class="btn btn-secondary" href="{{ url('/pc_part') }}" role="button">Build a PC</a></p>
+                </div>
             </div>
         </div>
     </div>
