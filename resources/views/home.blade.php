@@ -19,7 +19,7 @@
                                 {{ session('error') }}
                             </div>
                         @endif
-                        <h3>Welcomee to the User Dashboard</h3>
+                        <h3>Welcome to the User Dashboard</h3>
                         {{ __('You are logged in!') }}
                     </div>
                     <div>
