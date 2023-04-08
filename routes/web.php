@@ -37,6 +37,8 @@ Route::get('/', function(){
 //Route::resource('/storage', StorageController::class);
 //Route::resource('/power_supply', PowerSupplyController::class);
 //Route::resource('/motherboard', MotherboardController::class);
+Route::resource('/pc_part', PcPartController::class);
+Route::post('/pc_part/create', [PcPartController::class, 'store']);
 
 
 
@@ -128,8 +130,9 @@ Route::delete('/admin/home/tower/delete/{id}', [App\Http\Controllers\TowerContro
 
 Route::resource('/pc_part', PcPartController::class);
 
-//Route::get('/pc_part/index', [PcPartController::class, 'index' ])->name('index.pcpart');
+Route::get('/pc_part/index', [PcPartController::class, 'index' ])->name('index.pcpart');
 Route::post('/pc_part/create', [PcPartController::class, 'store']);
 
 //pcpart-admin
 Route::get('/admin/view', [PcPartController::class, 'adminView'])->name('admin.view')->middleware('is_admin');
+
