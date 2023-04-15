@@ -16,6 +16,12 @@
         </style>
     </head>
     <body class="antialiased">
+    @extends('layouts.app')
+
+    @section('content')
+
+
+       <!--
         <div class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
             @if (Route::has('login'))
                 <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right">
@@ -29,8 +35,20 @@
                         @endif
                     @endauth
                 </div>
-            @endif
+            @endif -->
 
+            <div class="container sm:flex sm:justify-center sm:items-start pt-5 min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 text-white">
+                <h1>Welcome to the best place to build a PC</h1>
+                <p>Welcome to our PC Builder website, where you can easily create your dream PC. <br>
+                    Our platform offers a wide range of high-quality components for every need,<br>
+                    and our user-friendly interface makes customization a breeze. <br>
+                    Start building your custom computer today and experience the power and performance you deserve.</p>
+                <!--<button class="btn btn-primary">Click me</button>  -->
+            </div>
+            @endsection
+
+
+            <!--
             <div class="max-w-7xl mx-auto p-6 lg:p-8">
                 <div class="flex justify-center">
                     <svg viewBox="0 0 62 65" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-16 w-auto bg-gray-100 dark:bg-gray-900">
@@ -134,7 +152,9 @@
                         Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
                     </div>
                 </div>
-            </div>
+            </div> -->
+
+
         </div>
     </body>
 </html>
