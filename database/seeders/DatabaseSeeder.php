@@ -20,5 +20,7 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         \App\Models\Cpu::factory(10)->create();
+        \App\Models\Gpu::factory(10)->create();
+
     }
 }

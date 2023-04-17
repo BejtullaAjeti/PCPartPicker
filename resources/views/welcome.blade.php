@@ -41,7 +41,7 @@
 
             <div class="container sm:flex sm:justify-center sm:items-start pt-5 min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 text-white">
                 <h1>Welcome to the best place to build a PC</h1>
-                <p>Welcome to our PC Builder website, where you can easily create your dream PC. <br>
+                <p style="color:black">Welcome to our PC Builder website, where you can easily create your dream PC. <br>
                     Our platform offers a wide range of high-quality components for every need,<br>
                     and our user-friendly interface makes customization a breeze. <br>
                     Start building your custom computer today and experience the power and performance you deserve.</p>
