@@ -29,7 +29,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
 
-                <img src="{{ asset('img/image3.jpg') }}" alt="Image 2" style="width: 100%;">
+                <img src="{{ asset('img/image3.jpg') }}" alt="Image 3" style="width: 100%;">
             </div>
         </div>
     </div>
