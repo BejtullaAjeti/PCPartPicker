@@ -5,7 +5,7 @@
     <div class="card-header">Build a PC</div>
 
     <div class="card-body">
-    
+
         <form method="POST" action="{{ url('pc_part') }}">
             {!! csrf_field() !!}
             <div>
@@ -80,7 +80,7 @@
                     @endforeach
                 </select>
             </div>
-            
+
             <!-- Repeat the above select fields for each component -->
             <button type="submit" value="Save">Build PC</button>
         </form>
