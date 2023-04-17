@@ -30,7 +30,8 @@ abbr:where([title]){
 }
 h1,h2,h3,h4,h5,h6{
     font-size:inherit;
-    font-weight:inherit
+    font-weight:inherit;
+    color: black
 }
 a{
     color:inherit;
@@ -449,7 +450,7 @@ img,video{
 @media (prefers-color-scheme: dark){
     .dark\:bg-gray-900{
         --tw-bg-opacity:1;
-        background-color:rgb(36 48 79 / var(--tw-bg-opacity))
+        /*background-color:rgb(36 48 79 / var(--tw-bg-opacity))*/
     }
     .dark\:bg-gray-800\/50{
         background-color:rgb(31 41 55 / 0.5)
