@@ -83,6 +83,10 @@
 
             <!-- Repeat the above select fields for each component -->
             <button type="submit" value="Save">Build PC</button>
+
+            <a href="{{ url('/pc_part') }}" class="btn btn-success btn-sm" title="Add New PC">
+                Go back
+            </a>
         </form>
     </div>
 </div>
