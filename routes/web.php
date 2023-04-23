@@ -136,3 +136,7 @@ Route::post('/pc_part/create', [PcPartController::class, 'store']);
 //pcpart-admin
 Route::get('/admin/view', [PcPartController::class, 'adminView'])->name('admin.view')->middleware('is_admin');
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
