@@ -18,6 +18,10 @@ use Illuminate\Http\Request;
 class PcPartController extends Controller
 {
 
+    public function contact(){
+        return view('home');
+    }
+
     public function index()
     {
         if (auth()->user()->is_admin) {
@@ -26,7 +30,7 @@ class PcPartController extends Controller
             $pc_parts = auth()->user()->pcBuilds;
         }
             return view('pc_parts.index', compact('pc_parts'));
-    
+
     }
 
     /*public function create()
@@ -37,9 +41,9 @@ class PcPartController extends Controller
         $power_supplies = PowerSupply::all();
         $cpu_coolers = CpuCooler::all();
         $towers = Tower::all();
-        $storages= Storage::all(); 
+        $storages= Storage::all();
         $motherboards = Motherboard::all();
-    
+
         return view('pc_parts.create', compact('cpus', 'gpus', 'rams', 'power_supplies','cpu_coolers','towers','storages', 'motherboards'));
     }*/
 
@@ -95,9 +99,9 @@ class PcPartController extends Controller
             ]);
 
             $validatedData['user_id'] = auth()->user()->id;
-        
+
             $pc_part = PcPart::create($validatedData);
-        
+
             return redirect('pc_part')->with('success', 'PC Part added successfully!');
         }
 
@@ -111,7 +115,7 @@ class PcPartController extends Controller
     public function show($id)
         {
             $pc_part = PcPart::findOrFail($id);
-            
+
             if($pc_part->user_id !== auth()->id() && !auth()->user()->is_admin ){
                 abort(403,'Unauthorized action.');
             }
@@ -124,10 +128,10 @@ class PcPartController extends Controller
             $towers = Tower::all();
             $storages = Storage::all();
             $motherboards = Motherboard::all();
-            
-          
+
+
             return view('pc_parts.show', compact('pc_part', 'cpus', 'gpus', 'rams', 'power_supplies', 'cpu_coolers', 'towers', 'storages', 'motherboards'));
-           
+
         }
 
         public function edit($id)
@@ -176,8 +180,6 @@ class PcPartController extends Controller
             $pc_parts = PcPart::with('user')->get(); // get all PC parts with associated user information
             return view('view', compact('pc_parts'));
         }
-
-
 
 
 }

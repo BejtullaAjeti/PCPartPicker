@@ -82,9 +82,12 @@
             </div>
 
             <!-- Repeat the above select fields for each component -->
-            <button type="submit" value="Save">Build PC</button>
+            <a href="{{ url('/home') }}" class="btn btn-success btn-sm" title="Add New PC">
+                Buy Now
+            </a>
+            <button type="submit" value="Save">Add to Cart</button>
 
-            <a href="{{ url('/pc_part') }}" class="btn btn-success btn-sm" title="Add New PC">
+            <a href="{{ url('/home') }}" class="btn btn-success btn-sm" title="Add New PC">
                 Go back
             </a>
         </form>

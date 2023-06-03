@@ -21,7 +21,8 @@
                         {{ __('You are now logged in and are able to build your own PC!') }}
                     </div>
                     <div style="text-align: center">
-                        <p><a class="btn btn-secondary" style="text-align: center" href="{{ url('/pc_part') }}" role="button">Build a PC</a></p>
+                        <p><a class="btn btn-secondary" style="text-align: center" href="{{ url('/pc_part/create') }}" role="button">Build a PC</a>          <a class="btn btn-secondary" style="text-align: center" href="{{ url('/pc_part') }}" role="button">Cart List</a></p>
+
                     </div>
                 </div>
             </div>

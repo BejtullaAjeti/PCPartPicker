@@ -33,7 +33,7 @@
                         </div>
                     @else
                         <div>
-                            <p><a class="btn btn-secondary" href="{{ url('/pc_part') }}" role="button">Build a PC</a></p>
+                            <p><a class="btn btn-secondary" href="{{ url('/home') }}" role="button">Build a PC</a></p>
                         </div>
                     @endif
                 @else

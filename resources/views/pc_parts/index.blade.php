@@ -6,12 +6,14 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h2>Build a PC</h2>
+                        <h2>Cart List</h2>
                     </div>
                     <div class="card-body">
+                        <!--
                         <a href="{{ url('/pc_part/create') }}" class="btn btn-success btn-sm" title="Add New PC">
                             Build a PC
                         </a>
+                        -->
                         <a href="{{ url('/home') }}" class="btn btn-success btn-sm" title="Add New PC">
                             Go back
                         </a>
@@ -55,6 +57,12 @@
                                                 <button type="submit" class="btn btn-danger btn-sm" title="Delete PC PARTS" onclick="return confirm('Confirm delete?')"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Delete</button>
                                             </form>
 
+                                        </td>
+
+                                        <td>
+                                            <a href="{{ url('/contact',$item->id) }}" class="btn btn-success btn-sm">
+                                                BUY
+                                            </a>
                                         </td>
 
                                     </tr>
