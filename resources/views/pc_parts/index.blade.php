@@ -1,27 +1,22 @@
 @extends('pc_parts.layout')
 @section('content')
 
-    <div class="container">
-        <div class="row" style="margin: 20px">
-            <div class="col-12">
-                <div class="card">
-                    <div class="card-header">
-                        <h2>Cart List</h2>
-                    </div>
-                    <div class="card-body">
-                        <!--
-                        <a href="{{ url('/pc_part/create') }}" class="btn btn-success btn-sm" title="Add New PC">
-                            Build a PC
-                        </a>
-                        -->
-                        <a href="{{ url('/home') }}" class="btn btn-success btn-sm" title="Add New PC">
-                            Go back
-                        </a>
-                        <br/>
-                        <br/>
-                        <div class="table-responsive">
-                            <table class="table">
-                                <thead>
+<div class="container">
+    <div class="row" style="margin: 20px">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h2>Build a PC</h2>
+                </div>
+                <div class="card-body">
+                    <a href="{{ url('/pc_part/create') }}" class="btn btn-success btn-sm" title="Add New PC">
+                        Build a PC
+                    </a>
+                    <br/>
+                    <br/>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
                                 <tr>
                                     <th>#</th>
                                     <th>CPU</th>
@@ -34,8 +29,8 @@
                                     <th>MOTHERBOARD</th>
 
                                 </tr>
-                                </thead>
-                                <tbody>
+                            </thead>
+                            <tbody>
                                 @foreach ($pc_parts as $item)
                                     <tr>
                                         <td>{{ $loop->iteration}}</td>
@@ -54,28 +49,22 @@
                                             <form method="post" action="{{ url('/pc_part' . '/' . $item->id )}}" accept-charset="UTF-8" style="display:inline">
                                                 {{ method_field('DELETE') }}
                                                 {{ csrf_field() }}
-                                                <button type="submit" class="btn btn-danger btn-sm" title="Delete PC PARTS" onclick="return confirm('Confirm delete?')"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Delete</button>
+                                               <button type="submit" class="btn btn-danger btn-sm" title="Delete PC PARTS" onclick="return confirm('Confirm delete?')"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Delete</button>
                                             </form>
 
                                         </td>
 
-                                        <td>
-                                            <a href="{{ url('/contact',$item->id) }}" class="btn btn-success btn-sm">
-                                                BUY
-                                            </a>
-                                        </td>
-
                                     </tr>
                                 @endforeach
-                                </tbody>
-                            </table>
-                        </div>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
-
         </div>
 
     </div>
+
+</div>
 
 @endsection

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
+    <div class="container  ">
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
@@ -13,8 +13,8 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    <h3>Welcomee to the Admin Dashboard</h3>
-                    {{ __('You are logged in!') }}
+                    <h3>Welcome to the Admin Dashboard</h3>
+                    {{ __('You are now logged in!') }}
                 </div>
             </div>
         </div>

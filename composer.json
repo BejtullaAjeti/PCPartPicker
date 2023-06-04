@@ -9,6 +9,7 @@
         "cartalyst/sentinel": "^7.0",
         "cartalyst/support": "^7.0",
         "guzzlehttp/guzzle": "^7.2",
+        "illuminate/database": "*",
         "laravel/framework": "^10.0",
         "laravel/sanctum": "^3.2",
         "laravel/tinker": "^2.8",
