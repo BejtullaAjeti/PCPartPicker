@@ -9,6 +9,7 @@ use App\Http\Controllers\RamController;
 use App\Http\Controllers\StorageController;
 use App\Http\Controllers\TowerController;
 use App\Http\Controllers\PcPartController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -44,7 +45,8 @@ Route::post('/pc_part/create', [PcPartController::class, 'store']);
 
 
 Auth::routes();
-
+Route::get('/contact/{id}', [HomeController::class, 'contact']);
+Route::get('/buy/{id}', [HomeController::class, 'buy']);
 //cpu
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/admin/home', [App\Http\Controllers\HomeController::class, 'adminHome'])->name('admin.home')->middleware('is_admin');
@@ -136,3 +138,7 @@ Route::post('/pc_part/create', [PcPartController::class, 'store']);
 //pcpart-admin
 Route::get('/admin/view', [PcPartController::class, 'adminView'])->name('admin.view')->middleware('is_admin');
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
